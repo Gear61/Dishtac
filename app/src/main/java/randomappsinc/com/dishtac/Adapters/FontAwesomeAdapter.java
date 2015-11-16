@@ -12,25 +12,26 @@ import randomappsinc.com.dishtac.R;
 /**
  * Created by alexanderchiou on 11/15/15.
  */
-public class NavDrawerAdapter extends BaseAdapter
+public class FontAwesomeAdapter extends BaseAdapter
 {
-    private String[] tabNames;
+    private String[] itemNames;
+    private String[] itemIcons;
     private Context context;
 
-    @SuppressWarnings("unchecked")
-    public NavDrawerAdapter(Context context) {
+    public FontAwesomeAdapter(Context context, String[] itemNames, String[] itemIcons) {
         this.context = context;
-        this.tabNames = context.getResources().getStringArray(R.array.nav_drawer_tabs);
+        this.itemNames = itemNames;
+        this.itemIcons = itemIcons;
     }
 
     @Override
     public int getCount() {
-        return tabNames.length;
+        return itemNames.length;
     }
 
     @Override
     public String getItem(int position) {
-        return tabNames[position];
+        return itemNames[position];
     }
 
     @Override
@@ -50,18 +51,9 @@ public class NavDrawerAdapter extends BaseAdapter
             holder = (FontAwesomeViewHolder) view.getTag();
         }
 
-        String tabName = tabNames[position];
-        holder.itemName.setText(tabName);
+        holder.itemName.setText(itemNames[position]);
+        holder.itemIcon.setText(itemIcons[position]);
 
-        if (tabName.equals(context.getString(R.string.top_restaurants))) {
-            holder.itemIcon.setText(context.getString(R.string.dish_icon));
-        }
-        else if (tabName.equals(context.getString(R.string.random_dish))) {
-            holder.itemIcon.setText(context.getString(R.string.random_icon));
-        }
-        else if (tabName.equals(context.getString(R.string.settings))) {
-            holder.itemIcon.setText(context.getString(R.string.settings_icon));
-        }
         return view;
     }
 }

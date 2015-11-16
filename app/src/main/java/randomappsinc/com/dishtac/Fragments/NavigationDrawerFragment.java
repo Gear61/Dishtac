@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +24,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
-import randomappsinc.com.dishtac.Adapters.NavDrawerAdapter;
+import randomappsinc.com.dishtac.Adapters.FontAwesomeAdapter;
 import randomappsinc.com.dishtac.R;
 
 /**
@@ -62,7 +63,9 @@ public class NavigationDrawerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LinearLayout navDrawer = (LinearLayout) inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         ButterKnife.bind(this, navDrawer);
-        mDrawerListView.setAdapter(new NavDrawerAdapter(getActivity()));
+        mDrawerListView.setAdapter(new FontAwesomeAdapter(getActivity(),
+                getResources().getStringArray(R.array.nav_drawer_tabs),
+                getResources().getStringArray(R.array.nav_drawer_icons)));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return navDrawer;
     }
@@ -96,7 +99,7 @@ public class NavigationDrawerFragment extends Fragment {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) getActivity().findViewById(R.id.toolbar);
+        Toolbar toolbar = (android.support.v7.widget.Toolbar) getActivity().findViewById(R.id.toolbar);
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the navigation drawer and the action bar app icon.

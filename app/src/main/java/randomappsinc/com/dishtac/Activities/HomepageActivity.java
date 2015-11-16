@@ -1,5 +1,6 @@
 package randomappsinc.com.dishtac.Activities;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
+import randomappsinc.com.dishtac.Fragments.FoodFeedFragment;
 import randomappsinc.com.dishtac.Fragments.NavigationDrawerFragment;
 import randomappsinc.com.dishtac.R;
 
@@ -38,10 +40,21 @@ public class HomepageActivity extends AppCompatActivity
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        // FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
+        FoodFeedFragment foodFeedFragment = new FoodFeedFragment();
+        fragmentManager.beginTransaction().replace(R.id.container, foodFeedFragment).commit();
+    }
 
-        // MonsterBoxFragment monsterBoxFragment = new MonsterBoxFragment();
-        // fragmentManager.beginTransaction().replace(R.id.container, monsterBoxFragment).commit();
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode) {
+        super.startActivityForResult(intent, requestCode);
+        overridePendingTransition(R.anim.slide_left_out, R.anim.slide_left_in);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_right_out, R.anim.slide_right_in);
     }
 
     @Override
@@ -51,6 +64,8 @@ public class HomepageActivity extends AppCompatActivity
             case 0:
                 // intent = new Intent(this, FavoritesActivity.class);
                 break;
+            case 2:
+                intent = new Intent(this, SettingsActivity.class);
         }
         startActivity(intent);
     }

@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:label="@string/settings"
+            android:name=".Activities.SettingsActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+            android:name=".Activities.DishFormActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
     </application>
 
 </manifest>

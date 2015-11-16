@@ -17,4 +17,9 @@
     <string name="dish_icon">{fa-cutlery}</string>
     <string name="random_icon">{fa-random}</string>
     <string name="settings_icon">{fa-gear}</string>
+    <string-array name="nav_drawer_icons">
+        <item>@string/dish_icon</item>
+        <item>@string/random_icon</item>
+        <item>@string/settings_icon</item>
+    </string-array>
 </resources>
