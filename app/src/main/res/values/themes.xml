@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- the theme applied to the application or activity -->
+    <style name="DishtacTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <!-- Define look of action bar -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <item name="colorPrimary">@color/app_red</item>
+        <item name="colorPrimaryDark">@color/app_red</item>
+        <item name="colorAccent">@color/app_red</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+
+        <!-- Support library compatibility -->
+        <item name="android:background">@color/app_red</item>
+        <item name="background">@color/app_red</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <!-- Change pop up theme -->
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">#000</item>
+    </style>
+</resources>
