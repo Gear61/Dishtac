@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:label="@string/top_restaurants"
-            android:name=".Activities.TopRestaurantsActivity"
+            android:name=".Activities.TopLocationsActivity"
             android:configChanges="orientation|screenSize">
         </activity>
         <activity

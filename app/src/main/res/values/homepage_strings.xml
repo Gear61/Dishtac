@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="top_restaurants">Top Restaurants</string>
+    <string name="top_restaurants">Top Locations</string>
     <string name="random_dish">Random Dish</string>
     <string name="settings">Settings</string>
     <string-array name="nav_drawer_tabs">
@@ -14,12 +14,12 @@
     </string-array>
 
     <!-- Font Awesome icons -->
+    <string name="location_icon">{fa-map-marker}</string>
     <string name="dish_icon">{fa-cutlery}</string>
-    <string name="random_icon">{fa-random}</string>
     <string name="settings_icon">{fa-gear}</string>
     <string-array name="nav_drawer_icons">
+        <item>@string/location_icon</item>
         <item>@string/dish_icon</item>
-        <item>@string/random_icon</item>
         <item>@string/settings_icon</item>
     </string-array>
 </resources>

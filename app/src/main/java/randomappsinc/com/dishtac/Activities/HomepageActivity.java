@@ -62,7 +62,7 @@ public class HomepageActivity extends AppCompatActivity
         Intent intent = null;
         switch (position) {
             case 0:
-                intent = new Intent(this, TopRestaurantsActivity.class);
+                intent = new Intent(this, TopLocationsActivity.class);
                 break;
             case 1:
                 intent = new Intent(this, RandomDishActivity.class);
@@ -70,6 +70,7 @@ public class HomepageActivity extends AppCompatActivity
             case 2:
                 intent = new Intent(this, SettingsActivity.class);
         }
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 

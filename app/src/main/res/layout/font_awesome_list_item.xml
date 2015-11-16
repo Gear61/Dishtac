@@ -5,6 +5,7 @@
     app:mrl_rippleDelayClick="true"
     app:mrl_rippleInAdapter="true"
     app:mrl_rippleDuration="@integer/default_anim_length"
+    app:mrl_rippleColor="@color/app_red"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
