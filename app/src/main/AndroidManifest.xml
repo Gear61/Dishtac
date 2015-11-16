@@ -25,6 +25,21 @@
             android:name=".Activities.DishFormActivity"
             android:configChanges="orientation|screenSize">
         </activity>
+        <activity
+            android:label="@string/search"
+            android:name=".Activities.SearchActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+            android:label="@string/top_restaurants"
+            android:name=".Activities.TopRestaurantsActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+            android:label="@string/random_dish"
+            android:name=".Activities.RandomDishActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
     </application>
 
 </manifest>

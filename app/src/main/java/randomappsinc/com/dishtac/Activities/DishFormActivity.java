@@ -3,7 +3,6 @@ package randomappsinc.com.dishtac.Activities;
 import android.os.Bundle;
 
 import butterknife.ButterKnife;
-import randomappsinc.com.dishtac.Adapters.FontAwesomeAdapter;
 import randomappsinc.com.dishtac.R;
 
 /**

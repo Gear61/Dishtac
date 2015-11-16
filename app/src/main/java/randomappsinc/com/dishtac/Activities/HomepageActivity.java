@@ -62,7 +62,10 @@ public class HomepageActivity extends AppCompatActivity
         Intent intent = null;
         switch (position) {
             case 0:
-                // intent = new Intent(this, FavoritesActivity.class);
+                intent = new Intent(this, TopRestaurantsActivity.class);
+                break;
+            case 1:
+                intent = new Intent(this, RandomDishActivity.class);
                 break;
             case 2:
                 intent = new Intent(this, SettingsActivity.class);
@@ -94,7 +97,7 @@ public class HomepageActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.search) {
-            //
+            startActivity(new Intent(this, SearchActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
