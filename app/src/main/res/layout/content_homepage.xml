@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/homepage">
+    tools:showIn="@layout/food_feed">
 
     <ListView
         android:id="@+id/food_feed"

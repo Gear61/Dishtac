@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import butterknife.Bind;
@@ -23,7 +21,7 @@ public class SettingsActivity extends StandardActivity {
     public static final String SUPPORT_EMAIL = "chessnone@gmail.com";
     public static final String REPO_URL = "https://github.com/Gear61/Dishtac";
 
-    @Bind(R.id.coordinator_layout) View parent;
+    @Bind(R.id.parent) View parent;
     @Bind(R.id.settings_options) ListView settingsOptions;
     @BindString(R.string.play_store_error) String playStoreError;
     @BindString(R.string.feedback_subject) String feedbackSubject;
@@ -42,8 +40,7 @@ public class SettingsActivity extends StandardActivity {
     }
 
     @OnItemClick(R.id.settings_options)
-    public void onItemClick(AdapterView<?> adapterView, View view, final int position, long id)
-    {
+    public void onItemClick(int position) {
         Intent intent = null;
         switch (position) {
             case 0:
@@ -67,13 +64,6 @@ public class SettingsActivity extends StandardActivity {
         }
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.blank_menu, menu);
-        return true;
     }
 }
 

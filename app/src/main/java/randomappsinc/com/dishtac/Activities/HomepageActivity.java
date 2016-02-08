@@ -16,16 +16,8 @@ import randomappsinc.com.dishtac.Fragments.FoodFeedFragment;
 import randomappsinc.com.dishtac.Fragments.NavigationDrawerFragment;
 import randomappsinc.com.dishtac.R;
 
-public class HomepageActivity extends AppCompatActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
+public class HomepageActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private CharSequence mTitle;
 
     @Override

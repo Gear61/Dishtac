@@ -1,11 +1,12 @@
 package randomappsinc.com.dishtac.Fragments;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,7 +15,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -31,10 +31,9 @@ import randomappsinc.com.dishtac.R;
  * Created by alexanderchiou on 11/15/15.
  */
 public class NavigationDrawerFragment extends Fragment {
-
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
     private NavigationDrawerCallbacks mCallbacks;
-    private android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     private DrawerLayout mDrawerLayout;
     private View mFragmentContainerView;
@@ -71,7 +70,7 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @OnItemClick(R.id.nav_drawer_tabs)
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(int position) {
         selectItem(position);
     }
 
@@ -154,13 +153,9 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mCallbacks = (NavigationDrawerCallbacks) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
-        }
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mCallbacks = (NavigationDrawerCallbacks) context;
     }
 
     @Override

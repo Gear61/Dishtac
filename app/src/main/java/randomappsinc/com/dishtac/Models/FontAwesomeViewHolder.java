@@ -12,8 +12,7 @@ import randomappsinc.com.dishtac.R;
 /**
  * Created by alexanderchiou on 11/15/15.
  */
-public class FontAwesomeViewHolder
-{
+public class FontAwesomeViewHolder {
     @Bind(R.id.item_icon) public IconTextView itemIcon;
     @Bind(R.id.item_name) public TextView itemName;
 
