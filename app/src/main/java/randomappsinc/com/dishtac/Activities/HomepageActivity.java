@@ -3,6 +3,7 @@ package randomappsinc.com.dishtac.Activities;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,19 +13,29 @@ import android.view.MenuItem;
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import randomappsinc.com.dishtac.Fragments.FoodFeedFragment;
 import randomappsinc.com.dishtac.Fragments.NavigationDrawerFragment;
 import randomappsinc.com.dishtac.R;
 
 public class HomepageActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+    @Bind(R.id.add_dish) FloatingActionButton addDish;
+
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.homepage);
+        ButterKnife.bind(this);
+
+        addDish.setImageDrawable(new IconDrawable(this, FontAwesomeIcons.fa_plus)
+                .colorRes(R.color.white)
+                .actionBarSize());
+
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -35,6 +46,11 @@ public class HomepageActivity extends AppCompatActivity implements NavigationDra
         FragmentManager fragmentManager = getFragmentManager();
         FoodFeedFragment foodFeedFragment = new FoodFeedFragment();
         fragmentManager.beginTransaction().replace(R.id.container, foodFeedFragment).commit();
+    }
+
+    @OnClick(R.id.add_dish)
+    public void addDish() {
+        startActivity(new Intent(this, DishFormActivity.class));
     }
 
     @Override
@@ -62,7 +78,6 @@ public class HomepageActivity extends AppCompatActivity implements NavigationDra
             case 2:
                 intent = new Intent(this, SettingsActivity.class);
         }
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }
 
