@@ -12,7 +12,7 @@ import randomappsinc.com.dishtac.R;
 /**
  * Created by alexanderchiou on 11/15/15.
  */
-public class FoodFeedFragment extends Fragment{
+public class FoodFeedFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
