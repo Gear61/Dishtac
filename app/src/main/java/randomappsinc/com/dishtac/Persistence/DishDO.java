@@ -5,12 +5,12 @@ import io.realm.RealmObject;
 /**
  * Created by alexanderchiou on 11/15/15.
  */
-public class DishDO extends RealmObject{
+public class DishDO extends RealmObject {
     private String name;
     private String location;
-    private int rating;
+    private float rating;
     private String description;
-    private long time;
+    private long timeCreated;
     private String imagePath;
 
     public String getName() {
@@ -29,11 +29,11 @@ public class DishDO extends RealmObject{
         this.location = location;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 
@@ -45,12 +45,12 @@ public class DishDO extends RealmObject{
         this.description = description;
     }
 
-    public long getTime() {
-        return time;
+    public long getTimeCreated() {
+        return timeCreated;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setTimeCreated(long timeCreated) {
+        this.timeCreated = timeCreated;
     }
 
     public String getImagePath() {

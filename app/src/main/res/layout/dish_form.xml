@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,18 +16,7 @@
         android:rating="1"/>
 
     <com.rey.material.widget.Button
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/submit"
-        android:background="@drawable/ripple_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        app:rd_rippleType="touch"
-        app:rd_backgroundAnimDuration="0"
-        app:rd_backgroundColor="@android:color/transparent"
-        app:rd_maxRippleRadius="match_view"
-        app:rd_rippleAnimDuration="@integer/shorter_anim_length"
-        app:rd_delayClick="untilRelease"
-        app:rd_enable="true"/>
-
+        style="@style/ripple_button_style"
+        app:rd_style="@style/button_ripple_attributes"/>
 </LinearLayout>

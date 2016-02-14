@@ -11,6 +11,7 @@ import com.rey.material.widget.Button;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import randomappsinc.com.dishtac.Models.Dish;
 import randomappsinc.com.dishtac.R;
 
 /**
@@ -22,6 +23,8 @@ public class DishFormActivity extends StandardActivity {
 
     public static String DISH_KEY = "dish";
 
+    private Dish dish;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,8 @@ public class DishFormActivity extends StandardActivity {
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (getIntent().getExtras() != null) {
+        dish = getIntent().getParcelableExtra(DISH_KEY);
+        if (dish != null) {
             submitButton.setText(R.string.update_dish);
         }
         else {
@@ -42,6 +46,9 @@ public class DishFormActivity extends StandardActivity {
 
     @OnClick(R.id.submit)
     public void submitDish(View view) {
-
+        if (dish == null) {
+            dish = new Dish();
+            dish.setRating(dishRating.getRating());
+        }
     }
 }
