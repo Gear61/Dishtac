@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <include layout="@layout/drawer_layout" />
+    <include layout="@layout/drawer_layout"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_dish"
